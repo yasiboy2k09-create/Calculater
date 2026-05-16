@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CALCULATOR</title>
+           <style>
+            body{
+                 background-color: hsl(194, 8%, 70%);
+            }
+
+            button {
+  background-color: #000000; /* Initial background */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: hwb(44 14% 34%); /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge */
+  box-shadow: 0 0 12px hwb(44 14% 34%); /* Glow effect */
+}
+
+               
+              
+                
+                 button:active {
+                    transform: scale(0.9);
+                 }
+                 .display {
+                    width: 250px;
+                    height: 60px;
+                    margin-bottom: 15px;
+                    font-size: 28px;
+                    text-align: right;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    padding-right: 10px;
+                    background: #000000;
+                    color: #ff0000;
+                    box-shadow: inset 0 0 10px #000000;
+                    animation: glow 1s infinite alternate;
+                }
+                .calculator {
+                    background: #ff0000;
+                    padding: 20px;
+                    border-radius: 15px;
+                    box-shadow: 0 0 20px #000000;
+                    width: 300px;
+                    margin-top: 100px;
+                    margin-left: 500px;
+                }
+                /*background animation*/ 
+                 * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+
+      /* Animated Gradient */
+      background: linear-gradient(
+        -100deg,
+        #ff0000,
+        #000000,
+        #ff0000,
+        #000000,
+        #ff0000
+       
+      );
+
+      background-size: 400% 400%;
+
+      animation: bgAnimation 10s ease infinite;
+    }
+
+    @keyframes bgAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      color: white;
+      font-size: 60px;
+      font-family: Arial, sans-serif;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+     h1{
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                   
+                   
+                }
+           </style>
+    </head>
+<body>     
+            <div class="calculator">
+      <input type="text" class="display" id="display" readonly ><br><br>
+      <div class="buttons">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('/')">/</button><br><br>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('*')">*</button><br><br>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('-')">-</button><br><br>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="caculate()">=</button>
+            <button onclick="appendToDisplay('+')">+</button><br><br>
+
+            <button onclick="clearDisplay()">C</button>     
+        </div>
+    </div>
+    </center> 
+      <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+</body>
+        <script>
+            function appendToDisplay(xyz) {
+                document.getElementById('display').value += xyz;
+            }
+            function clearDisplay() {
+    document.getElementById("display").value = "";
+  }
+        function caculate() {
+                const result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = result;
+        }
+
+ 
+        </script>
+</html>
